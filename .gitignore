@@ -1,0 +1,20 @@
+# binaries
+*
+!/**/
+!*.*
+!Dockerfile
+
+# IDE files
+.idea
+
+# Misc
+*coverage.out
+*coverage.html
+coverage
+*.log
+*.tar.gz
+*.tmp
+*.zip
+.DS_Store
+thumbs.db
+TODO.txt

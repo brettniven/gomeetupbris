@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package api;
+
+import "google/protobuf/wrappers.proto";
+
+message PingRequest {
+}
+
+message PingResponse {
+}
+
+message SubmitAgentDeltaRequest {
+    string agentID = 1; // an identifier of the agent. e.g. bet365_au etc
+    repeated AgentEvent events = 2;
+}
+
+message SubmitAgentDeltaResponse {
+}
+
+message AgentEvent {
+    string providerID = 1; // an identifier for this event, from the providers (or agents) perspective. Needn't be conformant among agents
+    google.protobuf.StringValue name = 2;
+    google.protobuf.StringValue sport = 3;
+    google.protobuf.StringValue competition = 4;
+    google.protobuf.BoolValue hidden = 5;
+    google.protobuf.BoolValue suspended = 6;
+    repeated AgentMarket markets = 7;
+}
+
+message AgentMarket {
+    string providerID = 1; // an identifier for this market, from the providers (or agents) perspective. Needn't be conformant among agents. Need only be unique within the owning event
+    google.protobuf.StringValue name = 2;
+    google.protobuf.BoolValue hidden = 3;
+    google.protobuf.BoolValue suspended = 4;
+    repeated AgentOption options = 5;
+}
+
+message AgentOption {
+    string providerID = 1;// an identifier for this option, from the providers (or agents) perspective. Needn't be conformant among agents. Need only be unique within the owning arket
+    google.protobuf.StringValue name = 2;
+    google.protobuf.BoolValue hidden = 3;
+    google.protobuf.BoolValue suspended = 4;
+    google.protobuf.DoubleValue price = 5;
+}
+
+service AgentGateway {
+    // Ping is used to check service availability
+    rpc Ping (PingRequest) returns (PingResponse) {
+    }
+
+    // SubmitAgentDelta submits an agent delta
+    rpc SubmitAgentDelta (SubmitAgentDeltaRequest) returns (SubmitAgentDeltaResponse) {
+    }
+
+}

@@ -1,0 +1,69 @@
+[
+  {
+    "providerID": "1201867",
+    "markets": [
+      {
+        "providerID": "35052659",
+        "options": [
+          {
+            "providerID": "1",
+            "price": {
+              "value": 1.3
+            }
+          },
+          {
+            "providerID": "2",
+            "price": {
+              "value": 2.99
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "providerID": "1207308",
+    "markets": [
+      {
+        "providerID": "35164367",
+        "options": [
+          {
+            "providerID": "1",
+            "price": {
+              "value": 2.3
+            }
+          },
+          {
+            "providerID": "3",
+            "price": {
+              "value": 4.1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "providerID": "1205455",
+    "markets": [
+      {
+        "providerID": "35154358",
+        "options": [
+          {
+            "providerID": "1",
+            "price": {
+              "value": 1.20
+            }
+          },
+          {
+            "providerID": "3",
+            "price": {
+              "value": 12.5
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+

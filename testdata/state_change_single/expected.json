@@ -1,0 +1,25 @@
+[
+  {
+    "providerID": "1201867",
+    "markets": [
+      {
+        "providerID": "35052659",
+        "options": [
+          {
+            "providerID": "1",
+            "price": {
+              "value": 1.3
+            }
+          },
+          {
+            "providerID": "2",
+            "price": {
+              "value": 2.99
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
+

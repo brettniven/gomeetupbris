@@ -1,0 +1,239 @@
+{
+  "EventTypes": [
+    {
+      "EventTypeID": 107,
+      "EventTypeDesc": "Basketball",
+      "EventTypeSlug": "basketball",
+      "MasterCategories": [
+        {
+          "MasterCategoryID": 22,
+          "MasterCategoryName": "NBL",
+          "MasterCategorySlug": "nbl"
+        }
+      ],
+      "Events": [
+        {
+          "Slug": "melbourne-united-v-cairns-taipans",
+          "MatchStatus": {
+            "HomeName": "Melbourne United",
+            "HomeScore": [
+              {
+                "Label": "HomeScore",
+                "Value": "42"
+              }
+            ],
+            "AwayName": "Cairns Taipans",
+            "AwayScore": [
+              {
+                "Label": "AwayScore",
+                "Value": "50"
+              }
+            ],
+            "Status": "(Q3:10.00)"
+          },
+          "DisplayMasterCategoryName": "NBL",
+          "CategorySlug": "nbl-matches",
+          "EventCount": 37,
+          "VisionStatus": "NotAvailable",
+          "MasterEventID": 1201867,
+          "MasterEventName": "Melbourne United v Cairns Taipans",
+          "CategoryName": "NBL Matches",
+          "MasterCategoryID": 22,
+          "FeaturedMarket": {
+            "EventID": 35052659,
+            "EventName": "Head to Head",
+            "AdvertisedStartTime": "2019-02-14T08:50:00Z",
+            "IsOpenForBetting": true,
+            "IsMultiAllowed": true,
+            "Outcomes": [
+              {
+                "FixedMarketID": 162677611,
+                "OutcomeID": 1,
+                "OutcomeName": "Melbourne United",
+                "Price": 1.3,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Melbourne United: "
+              },
+              {
+                "FixedMarketID": 162677612,
+                "OutcomeID": 2,
+                "OutcomeName": "Cairns Taipans",
+                "Price": 2.99,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Cairns Taipans: "
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "EventTypeID": 100,
+      "EventTypeDesc": "Soccer",
+      "EventTypeSlug": "soccer",
+      "MasterCategories": [
+        {
+          "MasterCategoryID": 18,
+          "MasterCategoryName": "Americas",
+          "MasterCategorySlug": "americas"
+        },
+        {
+          "MasterCategoryID": 14,
+          "MasterCategoryName": "Asia",
+          "MasterCategorySlug": "asia"
+        },
+        {
+          "MasterCategoryID": 8,
+          "MasterCategoryName": "Australia",
+          "MasterCategorySlug": "australia"
+        },
+        {
+          "MasterCategoryID": 17,
+          "MasterCategoryName": "Rest of Europe",
+          "MasterCategorySlug": "rest-of-europe"
+        }
+      ],
+      "Events": [
+        {
+          "Slug": "heidelberg-united-v-pascoe-vale",
+          "MatchStatus": {
+            "HomeName": "Heidelberg United",
+            "HomeScore": [
+              {
+                "Label": "HomeScore",
+                "Value": "1"
+              }
+            ],
+            "AwayName": "Pascoe Vale",
+            "AwayScore": [
+              {
+                "Label": "AwayScore",
+                "Value": "0"
+              }
+            ],
+            "Status": "45:00 2nd"
+          },
+          "DisplayMasterCategoryName": "NPL - Victoria Matches",
+          "CategorySlug": "npl-victoria-matches",
+          "EventCount": 34,
+          "VisionStatus": "NotAvailable",
+          "MasterEventID": 1205455,
+          "MasterEventName": "Heidelberg United v Pascoe Vale",
+          "CategoryName": "NPL - Victoria Matches",
+          "MasterCategoryID": 8,
+          "FeaturedMarket": {
+            "EventID": 35154358,
+            "EventName": "Win-Draw-Win",
+            "AdvertisedStartTime": "2019-02-14T08:45:00Z",
+            "IsOpenForBetting": true,
+            "IsMultiAllowed": true,
+            "Outcomes": [
+              {
+                "FixedMarketID": 163077065,
+                "OutcomeID": 1,
+                "OutcomeName": "Heidelberg United",
+                "Price": 1.20,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Heidelberg United: "
+              },
+              {
+                "FixedMarketID": 163077066,
+                "OutcomeID": 2,
+                "OutcomeName": "Draw",
+                "Price": 5.5,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Draw: "
+              },
+              {
+                "FixedMarketID": 163077067,
+                "OutcomeID": 3,
+                "OutcomeName": "Pascoe Vale",
+                "Price": 12.5,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Pascoe Vale: "
+              }
+            ]
+          }
+        },
+        {
+          "Slug": "nofel-sporting-club-v-team-bjmc",
+          "MatchStatus": {
+            "HomeName": "NOFEL Sporting Club",
+            "HomeScore": [
+              {
+                "Label": "HomeScore",
+                "Value": "0"
+              }
+            ],
+            "AwayName": "Team BJMC",
+            "AwayScore": [
+              {
+                "Label": "AwayScore",
+                "Value": "0"
+              }
+            ],
+            "Status": "44:00 1st"
+          },
+          "DisplayMasterCategoryName": "Bangladesh Premier League Matches",
+          "CategorySlug": "bangladesh-premier-league-matches",
+          "EventCount": 41,
+          "VisionStatus": "NotAvailable",
+          "MasterEventID": 1207308,
+          "MasterEventName": "NOFEL Sporting Club v Team BJMC",
+          "CategoryName": "Bangladesh Premier League Matches",
+          "MasterCategoryID": 14,
+          "FeaturedMarket": {
+            "EventID": 35164367,
+            "EventName": "Win-Draw-Win",
+            "AdvertisedStartTime": "2019-02-14T09:00:00Z",
+            "IsOpenForBetting": true,
+            "IsMultiAllowed": true,
+            "Outcomes": [
+              {
+                "FixedMarketID": 163116840,
+                "OutcomeID": 1,
+                "OutcomeName": "NOFEL Sporting Club",
+                "Price": 2.3,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "NOFEL Sporting Club: "
+              },
+              {
+                "FixedMarketID": 163116841,
+                "OutcomeID": 2,
+                "OutcomeName": "Draw",
+                "Price": 2.18,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Draw: "
+              },
+              {
+                "FixedMarketID": 163116842,
+                "OutcomeID": 3,
+                "OutcomeName": "Team BJMC",
+                "Price": 4.1,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Team BJMC: "
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
+
