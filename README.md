@@ -1,7 +1,5 @@
 # Go Meetup Brisbane, May 2019
 
-https://goreportcard.com/badge/github.com/brettniven/gomeetupbris
-
 [![Go Report Card](https://goreportcard.com/badge/brettniven/gomeetupbris)](https://goreportcard.com/report/brettniven/gomeetupbris)
 
 ## To Run
