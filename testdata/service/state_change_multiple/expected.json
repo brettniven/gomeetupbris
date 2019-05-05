@@ -1,0 +1,162 @@
+[
+  {
+    "providerID": "1201867",
+    "name": {
+      "value": "Melbourne United v Cairns Taipans"
+    },
+    "sport": {
+      "value": "Basketball"
+    },
+    "competition": {
+      "value": "NBL"
+    },
+    "markets": [
+      {
+        "providerID": "35052659",
+        "name": {
+          "value": "2-way"
+        },
+        "hidden": {},
+        "suspended": {},
+        "options": [
+          {
+            "providerID": "1",
+            "name": {
+              "value": "Melbourne United"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 1.3
+            }
+          },
+          {
+            "providerID": "2",
+            "name": {
+              "value": "Cairns Taipans"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 2.99
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "providerID": "1207308",
+    "name": {
+      "value": "NOFEL Sporting Club v Team BJMC"
+    },
+    "sport": {
+      "value": "Soccer"
+    },
+    "competition": {
+      "value": "Bangladesh Premier League Matches"
+    },
+    "markets": [
+      {
+        "providerID": "35164367",
+        "name": {
+          "value": "3-way"
+        },
+        "hidden": {},
+        "suspended": {},
+        "options": [
+          {
+            "providerID": "1",
+            "name": {
+              "value": "NOFEL Sporting Club"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 2.3
+            }
+          },
+          {
+            "providerID": "2",
+            "name": {
+              "value": "Draw"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 2.18
+            }
+          },
+          {
+            "providerID": "3",
+            "name": {
+              "value": "Team BJMC"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 4.1
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "providerID": "1205455",
+    "name": {
+      "value": "Heidelberg United v Pascoe Vale"
+    },
+    "sport": {
+      "value": "Soccer"
+    },
+    "competition": {
+      "value": "NPL - Victoria Matches"
+    },
+    "markets": [
+      {
+        "providerID": "35154358",
+        "name": {
+          "value": "3-way"
+        },
+        "hidden": {},
+        "suspended": {},
+        "options": [
+          {
+            "providerID": "1",
+            "name": {
+              "value": "Heidelberg United"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 1.2
+            }
+          },
+          {
+            "providerID": "2",
+            "name": {
+              "value": "Draw"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 5.5
+            }
+          },
+          {
+            "providerID": "3",
+            "name": {
+              "value": "Pascoe Vale"
+            },
+            "hidden": {},
+            "suspended": {},
+            "price": {
+              "value": 12.5
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

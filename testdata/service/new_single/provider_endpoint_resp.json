@@ -1,0 +1,75 @@
+{
+  "EventTypes": [
+    {
+      "EventTypeID": 107,
+      "EventTypeDesc": "Basketball",
+      "EventTypeSlug": "basketball",
+      "MasterCategories": [
+        {
+          "MasterCategoryID": 22,
+          "MasterCategoryName": "NBL",
+          "MasterCategorySlug": "nbl"
+        }
+      ],
+      "Events": [
+        {
+          "Slug": "melbourne-united-v-cairns-taipans",
+          "MatchStatus": {
+            "HomeName": "Melbourne United",
+            "HomeScore": [
+              {
+                "Label": "HomeScore",
+                "Value": "42"
+              }
+            ],
+            "AwayName": "Cairns Taipans",
+            "AwayScore": [
+              {
+                "Label": "AwayScore",
+                "Value": "50"
+              }
+            ],
+            "Status": "(Q3:10.00)"
+          },
+          "DisplayMasterCategoryName": "NBL",
+          "CategorySlug": "nbl-matches",
+          "EventCount": 37,
+          "VisionStatus": "NotAvailable",
+          "MasterEventID": 1201867,
+          "MasterEventName": "Melbourne United v Cairns Taipans",
+          "CategoryName": "NBL Matches",
+          "MasterCategoryID": 22,
+          "FeaturedMarket": {
+            "EventID": 35052659,
+            "EventName": "Head to Head",
+            "AdvertisedStartTime": "2019-02-14T08:50:00Z",
+            "IsOpenForBetting": true,
+            "IsMultiAllowed": true,
+            "Outcomes": [
+              {
+                "FixedMarketID": 162677611,
+                "OutcomeID": 1,
+                "OutcomeName": "Melbourne United",
+                "Price": 1.4,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Melbourne United: "
+              },
+              {
+                "FixedMarketID": 162677612,
+                "OutcomeID": 2,
+                "OutcomeName": "Cairns Taipans",
+                "Price": 2.88,
+                "MarketTypeCode": "WIN",
+                "BetDetailTypeCode": "WIN",
+                "DividendTypeCode": "FIXED",
+                "OutcomeHeader": "Cairns Taipans: "
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

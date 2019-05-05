@@ -36,6 +36,9 @@ func newPipeline(cache *cache, liveSportsEndpoint string, agentGatewayClient api
 	// liveEventsFetcher fetches provider specific live events, converts them to the agent model and add these to the provided channel
 	liveEventsFetcher := newLiveEventsFetcher(liveSportsEndpoint)
 
+	// the sink chan is where the pipeline finishes. Both success and error results are sent here
+	sink := make(chan pipelineItem, 100)
+
 	toConvert := make(chan pipelineItem, 100)
 	converted := make(chan pipelineItem, 100)
 	// converter converts provider state to the common format
@@ -43,9 +46,8 @@ func newPipeline(cache *cache, liveSportsEndpoint string, agentGatewayClient api
 
 	merged := make(chan pipelineItem, 100)
 	// merger merges new state with previous state, and outputs changes to the provided output channel
-	merger := newMerger(converted, merged)
+	merger := newMerger(converted, merged, sink)
 
-	sink := make(chan pipelineItem, 100)
 	// publisher receives outgoing deltas (from deltaOutputChan), publishes them to the agent-gateway service, and publishes the result to the sink
 	publisher := newPublisher(merged, sink, agentGatewayClient, deltasOnly)
 
@@ -98,7 +100,7 @@ func (p *pipeline) run() pipelineResult {
 	providerEvents, err := p.liveEventsFetcher.run()
 	if err != nil {
 		pr.numErrs++
-		logrus.WithError(err).Error()
+		logrus.WithError(err).Error("fetch_live_events")
 		return pr
 	}
 
@@ -134,6 +136,9 @@ func (p *pipeline) run() pipelineResult {
 		if pi.err != nil {
 			logrus.WithError(pi.err).Error()
 			pr.numErrs++
+			if rcvd == pr.numEvents {
+				break
+			}
 			continue
 		}
 

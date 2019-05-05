@@ -11,6 +11,7 @@ import (
 	"net/http/httptest"
 	"path/filepath"
 	"sort"
+	"strings"
 	"testing"
 	"time"
 
@@ -20,6 +21,7 @@ import (
 
 type serviceTest struct {
 	Name                     string
+	deltasOnly               bool
 	initialState             []api.AgentEvent
 	providerEndpointResponse []byte
 	expected                 []api.AgentEvent
@@ -29,15 +31,26 @@ func TestService(t *testing.T) {
 
 	logrus.SetLevel(logrus.InfoLevel)
 
-	scenarios := make([]serviceTest, 0)
+	scenarios := buildScenarios(t)
 
-	testDir := "./testdata"
+	// Run the individual test cases
+	for _, scenario := range scenarios {
+		t.Run(scenario.Name, func(t *testing.T) {
+			runScenario(t, scenario)
+		})
+	}
+}
+
+func buildScenarios(t *testing.T) []serviceTest {
+	testDir := "./testdata/service"
 	dirs, err := ioutil.ReadDir(testDir)
 	if err != nil {
 		t.Error(err)
 	}
 
-	// each dir under /testdata, is a test
+	scenarios := make([]serviceTest, 0)
+
+	// each dir under /testdata/service, is a test
 	for _, d := range dirs {
 		if !d.IsDir() {
 			continue
@@ -45,12 +58,15 @@ func TestService(t *testing.T) {
 
 		scenarioDir := testDir + string(filepath.Separator) + d.Name()
 
+		deltasOnly := strings.Contains(scenarioDir, "deltas_only")
+
 		initialState := readAndUnmarshalAEs(t, scenarioDir, "initial_state.json")
 		providerEndpointResponse := readPER(t, scenarioDir, "provider_endpoint_resp.json")
 		expected := readAndUnmarshalAEs(t, scenarioDir, "expected.json")
 
 		scenario := serviceTest{
 			Name:                     d.Name(),
+			deltasOnly:               deltasOnly,
 			initialState:             initialState,
 			providerEndpointResponse: providerEndpointResponse,
 			expected:                 expected,
@@ -59,12 +75,7 @@ func TestService(t *testing.T) {
 		scenarios = append(scenarios, scenario)
 	}
 
-	// Run the individual test cases
-	for _, scenario := range scenarios {
-		t.Run(scenario.Name, func(t *testing.T) {
-			runScenario(t, scenario)
-		})
-	}
+	return scenarios
 }
 
 func runScenario(t *testing.T, scenario serviceTest) {
@@ -78,7 +89,7 @@ func runScenario(t *testing.T, scenario serviceTest) {
 
 	// init the service
 	liveSportsEndpoint := httpSrv.URL
-	svc := NewService(agentGatewayClient, liveSportsEndpoint, time.Hour, true)
+	svc := NewService(agentGatewayClient, liveSportsEndpoint, time.Hour, scenario.deltasOnly)
 	// set initial state as dictated by the test
 	svc.setInitialState(scenario.initialState)
 	go svc.Start()
@@ -165,7 +176,8 @@ func readPER(t *testing.T, scenarioDir string, fileName string) []byte {
 }
 
 type MockAgentGatewayClient struct {
-	rcvd chan *api.SubmitAgentDeltaRequest
+	rcvd                    chan *api.SubmitAgentDeltaRequest
+	mockSubmitAgentDeltaArr error
 }
 
 func (magc *MockAgentGatewayClient) Ping(ctx context.Context, in *api.PingRequest, opts ...grpc.CallOption) (*api.PingResponse, error) {
@@ -175,5 +187,8 @@ func (magc *MockAgentGatewayClient) Ping(ctx context.Context, in *api.PingReques
 // SubmitAgentDelta submits an agent delta
 func (magc *MockAgentGatewayClient) SubmitAgentDelta(ctx context.Context, in *api.SubmitAgentDeltaRequest, opts ...grpc.CallOption) (*api.SubmitAgentDeltaResponse, error) {
 	magc.rcvd <- in
+	if magc.mockSubmitAgentDeltaArr != nil {
+		return nil, magc.mockSubmitAgentDeltaArr
+	}
 	return &api.SubmitAgentDeltaResponse{}, nil
 }
