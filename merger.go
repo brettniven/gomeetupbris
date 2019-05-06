@@ -5,8 +5,10 @@ import (
 	"gitlab.com/priceshield/agent-gateway/modelops"
 )
 
-// make the Merge/Delta funcs variable, to make it simple to mock them in tests
+// Merge is an indirection of the Merge func, making it simple to mock them in tests
 var Merge = modelops.Merge
+
+// Delta is an indirection of the Merge func, making it simple to mock them in tests
 var Delta = modelops.Delta
 
 // merger merges new state into existing state and also calculates the delta
